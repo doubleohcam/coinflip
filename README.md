@@ -34,3 +34,4 @@ If `number_of_flips > 1`, the program will output the array of results as well a
 ## Setup
 
 To setup local dev, run `script/bootstrap`
+
