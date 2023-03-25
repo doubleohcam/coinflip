@@ -18,6 +18,19 @@ Alright, so far so good. But now I want to know if my luck will keep going. Let'
 
 I survived! Ah, I feel much better and now will never be afraid of flying ever again... :smile:
 
+### Inputs
+
+There are two inputs, one required and one optional.
+
+`probability`: Can take the form of a float (`0.0123`) or a fraction `1/123`
+`(optional) number_of_flips`: A whole number. Defaults to `1` if not present.
+
+### Outputs
+
+If `number_of_flips == 1`, the program will output the string result of a single coinflip, ie. `Heads` or `Tails`.
+
+If `number_of_flips > 1`, the program will output the array of results as well as a total count of occurances.
+
 ## Setup
 
 To setup local dev, run `script/bootstrap`
