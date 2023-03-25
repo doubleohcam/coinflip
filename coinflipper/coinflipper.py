@@ -1,14 +1,15 @@
 import numpy as np
 
+
 class CoinFlipper:
     def __init__(self, probability: float) -> None:
         self.probability = probability
 
     def flip(self) -> int:
         """Return a coin flip, given a probability."""
-        #perform the binomial distribution (returns 0 or 1)    
+        # perform the binomial distribution (returns 0 or 1)
         result = np.random.binomial(1, self.probability)
-        #return flip to be added to numpy array    
+        # return flip to be added to numpy array
         return result
 
     def flips(self, number_of_flips: int) -> None:
@@ -33,7 +34,7 @@ class CoinFlipper:
                 print(print_string)
 
         print("]")
-        
+
         # print(results)
         print("Head Count: ", np.count_nonzero(results == 1))
         print("Tail Count: ", np.count_nonzero(results == 0))

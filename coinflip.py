@@ -11,13 +11,16 @@ def get_probability(probability: str) -> float:
         else:
             probability = float(probability)
     except ValueError:
-        err_msg = "Probability input must take form of a float (0.005) or fraction (1/1000)."
+        err_msg = (
+            "Probability input must take form of a float (0.005) or fraction (1/1000)."
+        )
         raise ValueError(err_msg)
-    
+
     if probability > 1 or probability < 0:
         err_msg = "Probability must be a value between 0 and 1"
         raise ValueError(err_msg)
     return probability
+
 
 def get_number_of_flips(number_of_flips: str) -> int:
     """Return number of flips as an int."""
@@ -27,6 +30,7 @@ def get_number_of_flips(number_of_flips: str) -> int:
         err_msg = "Number of flips must be an integer."
         raise ValueError(err_msg)
     return number_of_flips
+
 
 def get_inputs() -> tuple[float, int]:
     """Return probability and number of flips as floats."""
@@ -43,11 +47,14 @@ def get_inputs() -> tuple[float, int]:
         print("Unable to parse inputs:")
         print(f"-  {e}")
         print("")
-        print("Usage: \"python coinflip.py <probability> <number of flips (optional, defaults to 1)>\"")
-        print("> Example: \"python coinflip.py 0.5 100\"")
-        print("> Example: \"python coinflip.py 1/2\"")
+        print(
+            'Usage: "python coinflip.py <probability> <number of flips (optional, defaults to 1)>"'
+        )
+        print('> Example: "python coinflip.py 0.5 100"')
+        print('> Example: "python coinflip.py 1/2"')
         sys.exit(1)
     return probability, number_of_flips
+
 
 def main() -> None:
     probability, number_of_flips = get_inputs()
@@ -55,6 +62,7 @@ def main() -> None:
         print("Heads" if CoinFlipper(probability).flip() else "Tails")
     else:
         CoinFlipper(probability).flips(number_of_flips)
+
 
 if __name__ == "__main__":
     main()
