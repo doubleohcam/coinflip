@@ -1,6 +1,6 @@
 import numpy as np
 
-# TODO: this should be caught
+# TODO: this should be caught by the type checker
 
 class CoinFlipper:
     def __init__(self, probability: float) -> None:

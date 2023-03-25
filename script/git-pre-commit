@@ -37,7 +37,7 @@ lint () {
 failures=0
 
 # Run all checks
-lint
+lint()
 code=$?
 failures=$((failures + code))
 
