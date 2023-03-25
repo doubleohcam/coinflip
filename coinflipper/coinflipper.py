@@ -1,17 +1,17 @@
 import numpy as np
 
-# TODO: this should be caught by the type checker
 
 class CoinFlipper:
+    """CoinFlipper class to flip a coin given a probability."""
+
     def __init__(self, probability: float) -> None:
+        """Initialize the CoinFlipper class."""
         self.probability = probability
 
     def flip(self) -> int:
         """Return a coin flip, given a probability."""
-        # perform the binomial distribution (returns 0 or 1)
-        result = np.random.binomial(1, self.probability)
-        # return flip to be added to numpy array
-        return result
+        # return binomial distribution with 1 trial and probability
+        return np.random.binomial(1, self.probability)
 
     def flips(self, number_of_flips: int) -> None:
         """Return a list of coin flips, given a probability and number of flips."""

@@ -19,10 +19,9 @@ lint () {
 
     # This is run as a pre-commit hook, so dir should be root/.git/hooks
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-    ROOT_DIR=$DIR/../..
+    ROOT_DIR=$DIR/../../
     cd $ROOT_DIR
 
-    echo "*** Running flake8 ***"
     output=$(pipenv run flake8 $STAGED_FILES 2>&1)
     return_code=$?
     if [ $return_code -eq 0 ]; then
@@ -37,7 +36,7 @@ lint () {
 failures=0
 
 # Run all checks
-lint()
+lint
 code=$?
 failures=$((failures + code))
 
