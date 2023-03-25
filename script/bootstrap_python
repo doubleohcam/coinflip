@@ -4,7 +4,9 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-export PIPENV_VENV_IN_PROJECT="enabled"
+# keep .venv in project root
+export PIPENV_VENV_IN_PROJECT=1
+
 if ! command -v pipenv &> /dev/null; then
     echo "pipenv not found, installing..."
     pip install pipenv

@@ -5,6 +5,5 @@ set -e
 cd "$(dirname "$0")/.."
 ROOT=$(pwd)
 
-begin_fold "Linting..."
+echo "Linting..."
 pipenv run flake8 .
-end_fold
