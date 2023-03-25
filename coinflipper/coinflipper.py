@@ -1,5 +1,6 @@
 import numpy as np
 
+# TODO: this should be caught
 
 class CoinFlipper:
     def __init__(self, probability: float) -> None:
