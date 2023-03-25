@@ -22,8 +22,8 @@ I survived! Ah, I feel much better and now will never be afraid of flying ever a
 
 There are two inputs, one required and one optional.
 
-`probability`: Can take the form of a float (`0.0123`) or a fraction `1/123`
-`(optional) number_of_flips`: A whole number. Defaults to `1` if not present.
+- `probability`: Can take the form of a float (`0.0123`) or a fraction `1/123`
+- `(optional) number_of_flips`: A whole number. Defaults to `1` if not present.
 
 ### Outputs
 
