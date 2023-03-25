@@ -1,0 +1,65 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+
+[dev-packages]
+# linting
+# see more at https://github.com/DmytroLitvinov/awesome-flake8-extensions
+dlint = "*"
+flake8 = "*"
+flake8-2020 = "*"
+flake8-annotations = "*"
+flake8-annotations-complexity = "*"
+flake8-alfred = "*"
+flake8-async = "*"
+flake8-black = "*"
+flake8-bugbear = "*"
+flake8-builtins = "*"
+flake8-class-attributes-order = "*"
+flake8-cognitive-complexity = "*"
+flake8-comprehensions = "*"
+flake8-datetime-utcnow-plugin = "*"
+flake8-datetimez = "*"
+flake8-debugger = "*"
+flake8-docstrings = "*"
+# flake8-eradicate = "*" # not available for current flake8 version, see https://github.com/wemake-services/flake8-eradicate/pull/271
+flake8-executable = "*"
+flake8-expression-complexity = "*"
+flake8-fixme = "*"
+flake8-functions = "*"
+flake8-isort = "*"
+flake8-length = "*"
+flake8-logging-format = "*"
+flake8-multiline-containers = "*"
+flake8-no-pep420 = "*"
+flake8-noqa = "*"
+flake8-pep3101 = "*"
+flake8-pep585 = "*"
+flake8-pep604 = "*"
+flake8-print = "*"
+flake8-pytest-style = "*"
+flake8-return = "*"
+flake8-simplify = "*"
+flake8-spellcheck = "*"
+pep8-naming = "*"
+tryceratops = "*"
+yesqa = "*"
+# pytest
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+pytest-profiling = "*"
+pytest-randomly = "*"
+# the rest...
+build = "*"
+coverage = "*"
+
+[pipenv]
+allow_prereleases = true
+
+[requires]
+python_version = "3.11"

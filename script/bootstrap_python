@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -x
+set -e
+
+cd "$(dirname "$0")/.."
+
+export PIPENV_VENV_IN_PROJECT="enabled"
+if ! command -v pipenv &> /dev/null; then
+    echo "pipenv not found, installing..."
+    pip install pipenv
+fi
+
+pipenv --rm || echo "No pip env present!"
+pipenv --clear
+
+# determine if Pipfile.lock exists
+FILE=Pipfile.lock
+if test -f "$FILE"; then
+    echo "$FILE exists, commencing sync!"
+    pipenv sync $DEV_FLAG
+else
+    echo "$FILE does not exist, installing from Pipfile!"
+    pipenv install $DEV_FLAG
+fi

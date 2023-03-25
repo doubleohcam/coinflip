@@ -1,0 +1,44 @@
+#!/bin/bash
+
+exit_with_status () {
+    if [ $failures -ne 0 ]; then
+        echo ""
+        echo "$failures check(s) failed, please fix before committing."
+    fi
+
+    exit $failures
+}
+
+lint () {
+    STAGED_FILES=`git --no-pager diff --staged --name-only --diff-filter d | grep ".py$" | tr '\n' ' '`
+    if [ -z "$STAGED_FILES" ]; then
+        echo ""
+        echo "No python files, so nothing to lint."
+        return 0
+    fi
+
+    # This is run as a pre-commit hook, so dir should be root/.git/hooks
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    ROOT_DIR=$DIR/../..
+    cd $ROOT_DIR
+
+    echo "*** Running flake8 ***"
+    output=$(pipenv run flake8 $STAGED_FILES 2>&1)
+    return_code=$?
+    if [ $return_code -eq 0 ]; then
+        echo "Linting looks good!"
+    else
+        echo "$output"
+    fi
+    return $return_code
+}
+
+# Start at 0
+failures=0
+
+# Run all checks
+lint
+code=$?
+failures=$((failures + code))
+
+exit_with_status

@@ -1,0 +1,1 @@
+from .coinflipper import CoinFlipper

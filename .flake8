@@ -1,0 +1,15 @@
+[flake8]
+max-line-length = 120
+ignore=D100
+extend-ignore =
+    E501,
+    W505
+exclude = 
+    .venv,
+    .git
+whitelist = wordlist.txt
+
+# Options:
+# per-file-ignores = 
+#   test/*: D100
+

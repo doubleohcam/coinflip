@@ -1,0 +1,36 @@
+[tool.black]
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+
+# exclude a few common directories in the 
+# root of the project
+(
+    /(
+          \.coverage
+        | \.eggs
+        | \.git
+        | \.pytest_cache
+        | \.tox
+        | \.venv
+        | _build
+        | htmlcov
+        | build
+        | dist
+    )/
+)
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+filter_fiels = true
+# # skip specific files
+# extend_skip_glob = file_to_be_skipped.py
+
+# [tool.pytest.ini_options]
+# # set env vars
+# TEST_ENV = "blah"
+# # inject commands
+# addopts = "--cov=$project --cov-report html --cov-fail-under=100 --reuse-db -n auto"
+# testpaths = ["test"]  
