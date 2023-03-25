@@ -2,8 +2,7 @@
 set -x
 set -e
 
-DEV_FLAG="--dev"
-script/bootstrap_python
+DEV_FLAG="--dev" script/bootstrap_python
 
 if [ -d "$(pwd)/.git/hooks" ]; then
     ln -fs "$(pwd)/script/git-pre-commit" "$(pwd)/.git/hooks/pre-commit"

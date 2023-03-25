@@ -1,6 +1,6 @@
 [flake8]
 max-line-length = 120
-ignore=D100
+ignore=D100, TC003, ANN101
 extend-ignore =
     E501,
     W505
@@ -10,6 +10,8 @@ exclude =
 whitelist = wordlist.txt
 
 # Options:
-# per-file-ignores = 
-#   test/*: D100
+per-file-ignores = 
+  coinflip.py: INP001, T201
+  coinflipper/coinflipper.py: T201
+  coinflipper/__init__.py: F401
 
