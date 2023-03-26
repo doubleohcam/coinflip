@@ -30,7 +30,7 @@ filter_files = true
 
 [tool.pytest.ini_options]
 # set env vars
-TEST_ENV = "blah"
+# TEST_ENV = "blah"
 # inject commands
 addopts = "--cov=$project --cov-report html --cov-fail-under=100 -n auto"
 testpaths = ["test"]  
