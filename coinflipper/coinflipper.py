@@ -23,7 +23,16 @@ class CoinFlipper:
     def _interpret_results(self, results: list[int]) -> None:
         """Print the results of the coin flips."""
         print(f"Probability is set to {self.probability*100}%")
-        print("Tails = 0, Heads = 1")
+        if len(results) == 1:
+            print(f'Outcome: {"Heads" if results[0] else "Tails"}')
+        else:
+            print("Tails = 0, Heads = 1")
+            self._generate_results_matrix(results)
+            print("Head Count: ", np.count_nonzero(results == 1))
+            print("Tail Count: ", np.count_nonzero(results == 0))
+
+    def _generate_results_matrix(self, results: list[int]) -> None:
+        """Print the results of the coin flips in a matrix."""
         print("Results: [")
         print_string = " "
         for i, value in enumerate(results):
@@ -33,7 +42,4 @@ class CoinFlipper:
             print_string += f"{str(value)} "
             if i == len(results) - 1:
                 print(print_string)
-
         print("]")
-        print("Head Count: ", np.count_nonzero(results == 1))
-        print("Tail Count: ", np.count_nonzero(results == 0))

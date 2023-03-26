@@ -65,10 +65,7 @@ def get_inputs() -> tuple[float, int]:
 def main() -> None:
     """Run the program."""
     probability, number_of_flips = get_inputs()
-    if number_of_flips == 1:
-        print("Heads" if CoinFlipper(probability).flip() else "Tails")
-    else:
-        CoinFlipper(probability).flips(number_of_flips)
+    CoinFlipper(probability).flips(number_of_flips)
 
 
 if __name__ == "__main__":
