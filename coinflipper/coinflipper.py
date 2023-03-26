@@ -35,7 +35,5 @@ class CoinFlipper:
                 print(print_string)
 
         print("]")
-
-        # print(results)
         print("Head Count: ", np.count_nonzero(results == 1))
         print("Tail Count: ", np.count_nonzero(results == 0))
